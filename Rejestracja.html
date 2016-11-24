@@ -3,23 +3,26 @@
 <title> Rejestracja </title>
 </head>
 <body>
-<p>1.Imie</p>
-<input type="text"> 
-<p>2.Nazwisko</p>
-<input type="text">  
-<p>3.E-mail</p>	
-<input type="text">   
-<p>4.Data urodzenia</p>
-<input type="text">
-<p>5.Miasto</p>
-<input type="text"> 
-<p>6.Kod pocztowy</p>	
-<input type="text"> 
-<p>7.Adres</p>
-<input type="text">  
-<p>8.Numer telefonu</p>
-<input type="text"> 
-<input type="submit" value="Utwórz konto" name="rejestruj">
+<form method="POST" action="rejestracja.php">
+<p>Login</p>
+<input type="text" name="login"> 
+<p>Hasło</p>
+<input type="password" name="haslo1"> 
+<p>Powtórz hasło</p>
+<input type="password" name="haslo2">
+<p>E-mail</p>	
+<input type="text" name="email"> 
+<p>Imie</p>
+<input type="text" name="imie"> 
+<p>Nazwisko</p>	
+<input type="text" name="nazwisko"> 
+<p>Telefon</p>
+<input type="text" name="telefon"> 
+<p>Data urodzenia</p>
+<input type="Date" name="data_ur">
+</br></br></br>
+<input type="submit" value="Zarejestruj mnie" name="Rejestruj">
 </form>
+<a href="logowanie.html"> Zaloguj się </a>
 </body>
 </html>
