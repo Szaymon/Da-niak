@@ -1,25 +1,22 @@
 ﻿<?php
-$polacz = mysql_connect('localhost','root','') or die ("nie można połączyć z bazą danych");
-mysql_select_db('serwis',$polacz) or die("nie ma takiej bazy danych");
+$polacz = new mysqli("localhost","root","","serwis");
 
 $submit = $_POST['loguj'];
 if($submit)
 {
     $login = strip_tags($_POST['login']);
-    $haslo = strip_tags($_POST['haslo']);
+    $haslo = strip_tags($_POST['haslo1']);
+	$rower = $polacz -> query("SELECT login FROM uzytkownicy WHERE login  = '".$login."' and haslo='".$haslo."';");
 
-if (mysql_num_rows(mysql_query("SELECT login FROM uzytkownicy WHERE login  = '".$login."';")) > 0)
-	{	
-	if (mysql_num_rows(mysql_query("SELECT haslo FROM uzytkownicy WHERE haslo = '".$haslo."';")) > 0)
-		{
+		if($rower -> num_rows == 1){
+				$tramwaj=$rower -> fetch_row();
 			session_start();
-				$session_login = $row['login'];
+				$session_login = $tramwaj[0];
 				$_SESSION['login'] = $session_login;
-				$session_haslo = $row['haslo'];
-				$_SESSION['haslo'] = $session_haslo;
+				
+				echo "Wygrałeś tramwaj";
 		}
-		else echo "Zły login";
-	}
-		else echo"Hasło popraw";
+		else echo"coś sie zepsuło";
 }
+
 ?>
