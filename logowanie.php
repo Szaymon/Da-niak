@@ -14,9 +14,10 @@ if($submit)
 				$session_login = $tramwaj[0];
 				$_SESSION['login'] = $session_login;
 				
-				echo "Wygrałeś tramwaj";header('location:strona_główna.html ');
+				echo "Wygrałeś tramwaj"; header('location:strona_glowna.html ');
 		}
-		else echo"coś sie zepsuło";
-}
+		else {
+			echo"coś sie zepsuło";	header('location:logowanie.html');	
+}}
 
 ?>
