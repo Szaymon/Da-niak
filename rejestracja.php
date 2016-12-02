@@ -23,7 +23,7 @@ if (mysql_num_rows(mysql_query("SELECT login FROM uzytkownicy WHERE login = '".$
                 mysql_query("INSERT INTO uzytkownicy SET login='$login ', haslo='$haslo' , email='$email',imie='$imie',nazwisko='$nazwisko',telefon='$telefon ',data_ur='$data_ur '" ); 
  
                 echo "Konto zostało utworzone!";
-				header('location:strona_główna.html ');
+				header('location:strona_glowna.html ');
             }
             else echo "Hasła nie są takie same";
         }
