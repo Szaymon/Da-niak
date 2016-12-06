@@ -1,3 +1,3 @@
 <?php
-$polacz = new mysqli("localhost","root","","serwis");
+$polacz = mysqli_connect('localhost','root','','serwis');
 ?>

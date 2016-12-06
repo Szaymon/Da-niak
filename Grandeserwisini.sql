@@ -25,7 +25,7 @@ CREATE table ogloszenie (
 id_oglo int not null auto_increment ,
 id_uzyt int not null ,
 id_kat int not null ,
-nazwa_kat text (32) not null ,
+nazwa_prod text (32) not null ,
 opis_prod text (32) not null ,
 telefon varchar (9) not null ,
 zdjecie text ,
