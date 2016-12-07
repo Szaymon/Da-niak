@@ -53,6 +53,12 @@
     <label class="sr-only" for="telefon">Telefon</label>
     <input type="number" class="form-control" name="telefon" placeholder="Numer telefonu" >
   </div>
+  <div>
+	<select class="form-control" name="kategoria">
+    <option value="1">Motoryzacja</option>
+    <option value="2">Sport</option>
+    </select>
+  </div></br>
   <input type="submit" class="btn btn-default" name="dodaj" value="Dodaj ogłoszenie">
   </br></br>
 </form>

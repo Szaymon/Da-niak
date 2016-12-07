@@ -1,6 +1,13 @@
 ﻿<?php
 session_start();
 error_reporting();
+
+Include 'connect.php';
+$archiwum = mysqli_query($polacz,"INSERT INTO archiwum SELECT * FROM ogloszenie WHERE data_dod < DATE_SUB(NOW(), INTERVAL 30 DAY)");
+$off = mysqli_query($polacz,"SET foreign_key_checks = 0");
+$usun= mysqli_query($polacz,"DELETE FROM ogloszenie WHERE data_dod < DATE_SUB(NOW(), INTERVAL 30 DAY)");
+$on =  mysqli_query($polacz, "foreign_key_checks = 1");
+
 ?>
 <html>
 <head>
@@ -59,6 +66,17 @@ error_reporting();
   </div><!-- /.container-fluid -->
 </nav>
 
+<?php
+Include 'connect.php';
+
+$query = mysqli_query($polacz,"SELECT * FROM ogloszenie ORDER BY id_oglo DESC");
+if (!$query) {
+    printf("Error: %s\n", mysqli_error($polacz));
+exit();}
+while($row = mysqli_fetch_array($query,MYSQL_BOTH))
+{
+echo  $row['id_oglo'];}
+?>
 
 </body>
 </html>
