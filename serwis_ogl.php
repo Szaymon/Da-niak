@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<link rel="Stylesheet" type="text/css" href="widok.css" />
 <title>Serwis Ogłoszeniowy "U Bułki" </title>
 </head>
 <body>
@@ -19,26 +20,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" >Serwis ogłoszeniowy "U Bułki"</a>
+      <a class="navbar-brand" >Serwis ogłoszeniowy "U Jerzowej Bułki"</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="serwis_ogl.php">Strona Główna <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
+        <li class="active"><a href="serwis_ogl.php">Strona Główna <span class="sr-only">(current)</span></a></li>        
       </ul> 
 	  <ul class="nav navbar-nav navbar-right">
         <li><a href="Register.php">Sign in</a></li>
@@ -49,5 +37,19 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<form class="ramka" >
+<div class="a" align="center"><?php
+Include 'connect.php';
+
+$query = mysqli_query($polacz,"SELECT * FROM ogloszenie ORDER BY id_oglo DESC");
+if (!$query) {
+    printf("Error: %s\n", mysqli_error($polacz));
+exit();}
+while($row = mysqli_fetch_array($query,MYSQL_BOTH))
+{
+echo '<div class="a"><div><h3>'.$row['nazwa_prod'].'</h3></div></br><div><p>'.$row['opis_prod'].'</p></div></br><div>'.$row['telefon'].'</div></br><div>'.$row['data_dod'].'</div></div>';}
+?></div></br>
+</form>
 </body>
 </html>

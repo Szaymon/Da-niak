@@ -9,7 +9,7 @@ if($submit)
     $nazwa_prod = strip_tags($_POST['nazwa_prod']);
     $opis_prod = strip_tags($_POST['opis_prod']);
     $telefon = strip_tags($_POST['telefon']);
-	$data = date("Y-m-s");
+	$data = date("Y-m-d");
 }
 if(isset($_SESSION['login']))
     {

@@ -57,6 +57,8 @@
 	<select class="form-control" name="kategoria">
     <option value="1">Motoryzacja</option>
     <option value="2">Sport</option>
+	<option value="3">Elektronika</option>
+	<option value="4">Dom</option>
     </select>
   </div></br>
   <input type="submit" class="btn btn-default" name="dodaj" value="Dodaj ogłoszenie">
